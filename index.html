@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualizer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="btn-container">
+        <button class="btn btn-danger reset-btn" onclick="reset()" >Reset</button>
+        <input type="text" placeholder="Speed(ms)" id="speed" style="border-radius: 4px; padding:10px; margin:4px;">
+        <button class="btn btn-dark" style="margin-right: 20px;" onclick="set_speed()">Set Speed</button>
+        <button class="btn btn-dark" onclick="bfs()">BFS</button>
+        <button class="btn btn-dark" onclick="dfs()">DFS</button>
+        <button class="btn btn-danger" onclick="clearboard()" >Clear Board</button>
+        <div style="width: 50px;"></div>
+
+        
+
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Instructions
+        </button>
+        
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+            <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;">Instructions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+                    <pre >
+Welcome to Pathfinding Visualizer!
+
+This is a visualization tool for pathfinding algorithms. You can choose the algorithm you want to visualize from the menu.
+
+You can also choose the speed of visualization. The speed is in milliseconds.
+
+USAGE:
+1. Choose the cell you want to be the start node by left mouse click.
+2. Choose the cell you want to be the end node by right mouse click.
+3. Draw obstacles by ctrl+left mouse click and drag.
+4. Press the button to visualize the algorithm.
+5. Press the reset button to reset the algorithm.
+6. Press the clear board button to clear the board.
+                    </pre>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="main-container"></div>
+
+    <script src="algos.js"></script>
+</body>
+</html>
